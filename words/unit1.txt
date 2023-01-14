@@ -1,0 +1,72 @@
+brand,the image or identity associated with a business
+business model,the way in which a business operates
+business,an organization that seeks to generate a profit by providing customers with goods and services
+consumer goods,produced for and sold to the end user of a product
+currency,a way of representing money in physical or digital form
+deindustrialization,the decline in manufacturing and moving into tertiary sector
+devaluation,a reduction in the value of a currency
+dividend,payment to shareholders out of profit
+e-commerce/e-tailing,using electronic systems to sell goods and services
+embargo,a complete ban on imported goods
+enterprise,the activity of starting and running businesses
+entrepreneurs,people accepting the risk of starting and running a business
+exchange rate,the value of a currency expressed in terms of another
+exports,goods and services sold overseas
+flotation,when a business becomes plc
+franchise,an agreement whereby a business permits another business to use its brand, business model and goodwill in return for a series of fees
+franchisee,a person or organization who sets up and run the franchise
+franchisor,a business that sells their franchise to other firms
+free trade,trade between nations completely without government restrictions
+globalization,growing integration of economies worldwide
+good,any product produced by a business for the customer
+goodwill,the value of a business in terms of its relationship with its customers and suppliers
+growth,an increase in the size of a business
+imports,goods and services bought from overseas
+incorporated,a business that has a separate legal identity from that of its owners
+infrastructure,basic systems and structures that a country or organization needs in order to work properly
+insolvency,inability to meet debts
+interest,the price of borrowing
+labor,the human resources needed by the business
+liabilities,debts of the business
+limited liability,the owner is only responsible for business debts up to the value of their financial investment in the business
+liquidity,the ability of a business to meet its short term debts
+LLPs,limited liability partnerships
+loan,something that is borrowed
+location,the geographical space that a business operates from
+market share,the percentage of market held by a firm in terms of sales revenue
+market,a set of arrangements that allows buyers and sellers to trade in goods and services
+materials,items needed in the production of goods or delivery of services
+mission statement,a brief summary of a firm's aims and objectives
+MNC, multinational corporation,a business that operates in more than one country
+objectives,goals or targets set by a business
+organization,a group of people working together towards a common goal
+outsourcing,when a business pays another firm to produce its products
+partnership,a form of business in which two or more people share ownership of an unincorporated business
+policies,legal objectives implemented through legislation
+PR, public relations,how a business is communicated to the outside via free media
+premises,buildings and land used by a business
+primary sector,the sector involved in extracting raw materials from the Earth
+private limited company,an incorporated business organization in which owners can sell, but cannot advertise shares
+private sector,the group of organizations owned by individuals and shareholders
+producer goods,produced for another business to use for their own business activity
+products,any goods produced by a business
+proximity to market,how close a business is to its customers
+public corporation,an organization owned and controlled by the state
+public limited company,an incorporated business which has been floated on the stock market
+quota,a physical limit on the quantity of imports allowed into a country
+raw materials,the basic material from which a product is made.
+sales revenue,money generated from selling goods or services
+secondary sector,the sector that manufactures finished goods
+sectors,areas of the economy in which businesses share related activity, goods and services
+services,activities performed to satisfy customer needs/wants
+shareholders,owners of a corporation
+social enterprise,a business that seeks to reinvest all/most of its profits for social objectives
+sole trader,a form of business in which one person has complete ownership and control(typically used for low-risk and small businesses)
+stakeholders,individuals or groups with an interest in or influenced by a firm
+tariff,a tax on imported goods
+tertiary sector,the sector that provides services
+trade barriers,restrictions on imports/exports
+trade bloc,an agreement between countries to reduce trade barriers
+unincorporated,a business where there is no legal difference between the owner and the business
+unique selling point,a feature of a product that no other similar products have
+unlimited liability,the owner is personally liable for all business debts

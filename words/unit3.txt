@@ -1,0 +1,33 @@
+working capital,the finance used for day-to-day spending
+overhead,ongoing indirect costs to operate a business
+start-up capital,finance needed to allow a business to open for the first time
+personal savings,when the owner(s) invests their own money into the business
+retained profit,when the business keeps a percentage of annual profits to reinvest in the business
+selling assets,when a business finds buyers for unused land, buildings, or capital etc
+asset,anything that a business owns
+overdraft,when the bank allows the business to incur a negative account balance
+trade payables,when a business buys gods or services from other firms under agreement to pay at a later date
+loan capital,an agreement to borrow money to be repaid in installments with interest
+collateral,the asset used to ensure that the debt is paid
+share capital,the sale of equity in the business
+venture capital,The sale of a large percentage of shares to an external investor or firm with an interest of influencing the business
+crowdfunding,using an online platform to invite backers to invest in the business in return for a reward
+cash,the money that a business possesses and is able to spend
+cash-flow forecast,a financial account indicating projected cash flows and balances over a time period
+costs,any expenses incurred by a business in producing and selling goods or services
+fixed costs,expenses that don't change with the level of output
+variable costs,expenses that change directly with the level of output
+break-even,the level of output at which total costs equal total revenue
+liabilities,debts of the business
+current assets,anything that a business owns and intends to consume or convert into cash within a year
+non-current (fixed) assets,anything that a business owns and does not intend to convert into cash within a year
+non-current liabilities,any debts that a business has which do not need to be repaid within a year
+current liabilities,any debts that a business has which must be repaid within a year
+net current assets,current assets - current liabilities (working capital)
+net assets,the value of all assets - all liabilities
+shareholder equity,the capital of the business (the money owed to its owners)
+capital employed,the amount of money invested in a business
+inventory,stocks of goods
+expenses,indirect costs
+short-term finance,money borrowed to be repaid within 12 months
+long-term finance,money borrowed to be repaid over 12 months

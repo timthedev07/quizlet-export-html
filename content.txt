@@ -1,0 +1,32 @@
+automation,when a machine can function on its own
+batch production,series of repeated procedures that are applied to each product
+capital productivity,output per unit of machinery per time period
+capital-intensive,processes of manufacturing mainly relying on machinery
+capital,physical resources involved in production
+diseconomies of scale,increased average cost of production when output rises beyond the optimal level
+economies of scale,falling average costs due to rising levels of output
+enterprise,turning ideas into marketable goods/services
+external economies of scale,falling average costs due to the expansion of an industry
+flexibility,how well a business's goods/services can adapt to changing market conditions
+flow production,producing an item in large quantities on a production line
+internal economies of scale,falling average costs as output rises
+job production,producing one-off items that are made to the customer's exact needs
+just-in-time,when the time that materials and produced units are held by the firm is minimized
+kaizen,continuous improvement made through incremental changes
+labor productivity,output per worker per time period
+labor-intensive,processes of manufacturing mainly relying on human labor
+labor,people who work for a business
+land,the physical space a business operates from
+lean production,an approach to operations management with minimum wastage and inefficiencies
+methods of production,how a business manufactures a product in terms of scale and process
+mortage,long-term loan secured with property
+operations function,manages the production and delivery of goods and services
+output,amount of goods or word produced by a person, machine, or factory
+production technology,the use of machines in production
+production,transformation of resources into a product
+quality control,ensuring that the quality of products meets specified standards
+quality,how well a good/service meets customer expectations
+resources,factors of production(capital, enterprise, land, labor)
+robotics,manufacturing involving automated machines
+total quality management (TQM),a managerial approach that focuses on quality and aims to improve the effectiveness, flexibility and competitiveness of the business
+transactions,business deals or actions
