@@ -1,10 +1,10 @@
 import webbrowser
 
 
-def readWords(wordsPath="content.txt"):
+def readWords(wordsPath="content.txt", sep=","):
     with open(wordsPath, "r", encoding="utf-8") as f:
         pairs = list(
-            map(lambda x: tuple(x.split(",", 1)), f.read().strip("\n").split("\n")))
+            map(lambda x: tuple(x.split(sep, 1)), f.read().strip("\n").split("\n")))
         return pairs
 
 
@@ -41,7 +41,7 @@ def genHTML(words, title):
         td, th {{
             border-top: none;
             text-align: left;
-            padding: 12px;
+            padding: 10px;
             border-bottom: solid 1px rgb(196, 196, 196);
         }}
 
