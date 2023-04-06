@@ -19,7 +19,7 @@ labor,people who work for a business
 land,the physical space a business operates from
 lean production,an approach to operations management with minimum wastage and inefficiencies
 methods of production,how a business manufactures a product in terms of scale and process
-mortage,long-term loan secured with property
+mortgage,long-term loan secured with property
 operations function,manages the production and delivery of goods and services
 output,amount of goods or word produced by a person, machine, or factory
 production technology,the use of machines in production
