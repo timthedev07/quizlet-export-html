@@ -8,6 +8,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "dragontail-experimental": "^0.0.63",
+    "jspdf": "^2.5.1",
     "next": "13.3.0",
     "next-seo": "^6.0.0",
     "react": "18.2.0",
