@@ -12,8 +12,8 @@ body {
     background: rgb(58, 68, 91);
     background: linear-gradient(
       135deg,
-      rgba(58, 68, 91, 0.4) 0%,
-      rgba(51, 65, 85, 0.4) 100%
+      rgba(43, 51, 69, 0.4) 0%,
+      rgba(40, 53, 71, 0.4) 100%
     );
   }
 } ;
