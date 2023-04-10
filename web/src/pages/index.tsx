@@ -1,4 +1,10 @@
-import { Button, Input, Textarea } from "dragontail-experimental";
+import {
+  Button,
+  FormControl,
+  FormErrorMessage,
+  Input,
+  Textarea,
+} from "dragontail-experimental";
 import type { NextPage } from "next";
 import { useState } from "react";
 import { genVocabHtmlStr, processVocab } from "../lib/genPdf";
@@ -21,39 +27,47 @@ const Home: NextPage = () => {
 
     setLoading(true);
 
-    const response = await fetch("/api/htmlpdf", {
-      method: "POST",
-      body: JSON.stringify({
-        content: htmlStr,
-      }),
-    });
+    setTimeout(async () => {
+      const response = await fetch("/api/htmlpdf", {
+        method: "POST",
+        body: JSON.stringify({
+          content: htmlStr,
+        }),
+      });
 
-    const data = await response.json();
+      const raw = await response.text();
+      let data;
+      try {
+        data = JSON.parse(raw);
+      } catch {
+        data = raw;
+      }
 
-    if (!response.ok) {
+      if (!response.ok) {
+        setLoading(false);
+        router.push(
+          `/client-error?msg=${encodeURIComponent(
+            typeof data === "string" ? data : JSON.parse(data.err).message
+          )}&prev=${encodeURIComponent("/")}`
+        );
+        return;
+      }
+
+      const pdfBuffer = Uint8Array.from(data.pdfBuffer.data);
+      const blob = new Blob([pdfBuffer.buffer], {
+        type: "application/pdf",
+      });
+      const a = document.createElement("a");
+      const downloadUrl = window.URL.createObjectURL(blob);
+      a.style.display = "none";
+      a.href = downloadUrl;
+      a.download = `${title}.pdf`;
+      document.body.append(a);
       setLoading(false);
-      router.push(
-        `/client-error?${encodeURIComponent(
-          `msg=${JSON.parse(data.err).message}&prev=/`
-        )}`
-      );
-      return;
-    }
-
-    const pdfBuffer = Uint8Array.from(data.pdfBuffer.data);
-    const blob = new Blob([pdfBuffer.buffer], {
-      type: "application/pdf",
-    });
-    const a = document.createElement("a");
-    const downloadUrl = window.URL.createObjectURL(blob);
-    a.style.display = "none";
-    a.href = downloadUrl;
-    a.download = `${title}.pdf`;
-    document.body.append(a);
-    setLoading(false);
-    a.click();
-    a.remove();
-    window.URL.revokeObjectURL(downloadUrl);
+      a.click();
+      a.remove();
+      window.URL.revokeObjectURL(downloadUrl);
+    }, 600);
   };
 
   return (
@@ -67,12 +81,18 @@ const Home: NextPage = () => {
           <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 p-6 lg:p-8 rounded-lg control_board w-full h-[838px] lg:h-[438px] shadow-lg">
             <div className="flex-1 flex flex-col items-center gap-8 justify-center">
               <h2 className="text-white/90 text-xl">Vocab</h2>
+
               <Textarea
-                value={vocab}
-                onChange={(e) => setVocab(e.target.value)}
-                className="h-[60%]"
                 variant="underline"
+                className="h-[60%]"
+                value={vocab}
+                isInvalid={vocab.length > 20000}
+                onChange={(e) => setVocab(e.target.value)}
               ></Textarea>
+              {vocab.length > 20000 && (
+                <FormErrorMessage>Maximum 20k characters</FormErrorMessage>
+              )}
+
               <Button
                 color="orange"
                 onClick={() => {

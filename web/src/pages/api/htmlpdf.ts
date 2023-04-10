@@ -1,6 +1,8 @@
 import { NextApiHandler } from "next";
 import htmlPdf from "html-pdf-node";
 import { withMethodGuard } from "../../lib/middleware/method-guard";
+import { withRateLimiting } from "../../lib/middleware/withRateLimiting";
+import { withAuth } from "../../lib/middleware/auth-guard";
 
 const handler: NextApiHandler = async (req, res) => {
   const body = JSON.parse(req.body) as { content?: string };
@@ -11,6 +13,11 @@ const handler: NextApiHandler = async (req, res) => {
     });
 
   const file = { content: body.content };
+  if (!file.content) {
+    return res.status(400).json({
+      err: "No HTML content found.",
+    });
+  }
 
   htmlPdf.generatePdf(
     file,
@@ -32,4 +39,4 @@ const handler: NextApiHandler = async (req, res) => {
   );
 };
 
-export default withMethodGuard(handler, "POST");
+export default withMethodGuard(withAuth(withRateLimiting(handler)), "POST");

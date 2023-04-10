@@ -10,7 +10,9 @@ export const Layout: FC<{ children: ReactNode }> = ({ children }) => {
   return (
     <>
       <DefaultSeo {...defaultConfig} />
-      <div id="App">{children}</div>
+      <div id="App" className="min-h-screen">
+        {children}
+      </div>
       <footer
         className={`p-3 flex justify-evenly items-centered sticky bottom-0 float-right rounded-tl-2xl border-2 border-solid border-slate-600/50 bg-slate-800 h-16 ${
           !data?.user ? "w-64" : "w-48"
