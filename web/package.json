@@ -2,7 +2,7 @@
   "name": "web",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "concurrently \"next dev\" \"redis-server\"",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -10,6 +10,7 @@
   "dependencies": {
     "dragontail-experimental": "^0.0.63",
     "html-pdf-node": "^1.0.8",
+    "ioredis": "^5.3.1",
     "next": "13.3.0",
     "next-auth": "^4.22.0",
     "next-seo": "^6.0.0",
@@ -24,6 +25,7 @@
     "@types/react": "18.0.33",
     "@types/react-dom": "^18.0.11",
     "autoprefixer": "^10.4.14",
+    "concurrently": "^8.0.1",
     "eslint": "8.31.0",
     "eslint-config-next": "13.1.2",
     "gen-env-types": "^1.3.4",

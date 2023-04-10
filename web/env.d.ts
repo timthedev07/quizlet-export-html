@@ -3,6 +3,10 @@ declare global {
     interface ProcessEnv {
       GOOGLE_ID: string;
       GOOGLE_SECRET: string;
+      REDIS_HOST: string;
+      REDIS_PORT: string;
+      REDIS_PASSWORD: string;
+      REDIS_USERNAME: string;
     }
   }
 }
