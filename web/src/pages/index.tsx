@@ -1,6 +1,6 @@
 import { Button, Input, Textarea } from "dragontail-experimental";
 import type { NextPage } from "next";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { genVocabHtmlStr, processVocab } from "../lib/genPdf";
 
 const Home: NextPage = () => {
