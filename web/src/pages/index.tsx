@@ -4,9 +4,11 @@ import { useState } from "react";
 import { genVocabHtmlStr, processVocab } from "../lib/genPdf";
 import { useRouter } from "next/router";
 import { Loading } from "../components/Loading";
+import { useSession } from "next-auth/react";
 
 const Home: NextPage = () => {
   const router = useRouter();
+  const { data: sessionData } = useSession();
   const [termSep, setTermSep] = useState<string>(",");
   const [lineSep, setLineSep] = useState<string>("\\n");
   const [title, setTitle] = useState<string>("");
@@ -73,11 +75,12 @@ const Home: NextPage = () => {
               ></Textarea>
               <Button
                 color="orange"
-                className="self-right"
                 onClick={() => {
                   handleGenerate();
                 }}
-                isDisabled={!title || !vocab}
+                isDisabled={!title || !vocab || !sessionData?.user}
+                about="hey"
+                title="Sign in to continue."
               >
                 Generate
               </Button>
