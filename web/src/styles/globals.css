@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  @apply bg-slate-900/90 text-white;
+  @apply bg-slate-900/[.95] text-white;
   font-family: Verdana, sans-serif;
 }
 
