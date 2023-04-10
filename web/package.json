@@ -9,14 +9,16 @@
   },
   "dependencies": {
     "dragontail-experimental": "^0.0.63",
-    "jspdf": "^2.5.1",
+    "html-pdf-node": "^1.0.8",
     "next": "13.3.0",
+    "next-auth": "^4.22.0",
     "next-seo": "^6.0.0",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.9",
+    "@types/html-pdf-node": "^1.0.0",
     "@types/node": "18.15.11",
     "@types/react": "18.0.33",
     "@types/react-dom": "^18.0.11",

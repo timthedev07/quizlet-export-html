@@ -2,17 +2,43 @@ import { Button, Input, Textarea } from "dragontail-experimental";
 import type { NextPage } from "next";
 import { useRef, useState } from "react";
 import { genVocabHtmlStr, processVocab } from "../lib/genPdf";
-import { IFrame } from "../components/Iframe";
 
 const Home: NextPage = () => {
   const [termSep, setTermSep] = useState<string>(",");
   const [lineSep, setLineSep] = useState<string>("\\n");
+  const [title, setTitle] = useState<string>("");
   const [vocab, setVocab] = useState<string>("");
-  const iframeRef = useRef<HTMLIFrameElement>(null);
 
-  const handleGenerate = () => {
+  const handleGenerate = async () => {
     const vocabList = processVocab(vocab, termSep, lineSep);
-    const htmlStr = genVocabHtmlStr(vocabList);
+    const htmlStr = genVocabHtmlStr(vocabList, title);
+
+    const response = await fetch("/api/htmlpdf", {
+      method: "POST",
+      body: JSON.stringify({
+        content: htmlStr,
+      }),
+    });
+
+    console.log(response.ok);
+
+    if (!response.ok) return window.alert("Failure...");
+
+    const data = await response.json();
+    const pdfBuffer = Uint8Array.from(data.pdfBuffer.data);
+    console.log(pdfBuffer.buffer);
+    const blob = new Blob([pdfBuffer.buffer], {
+      type: "application/pdf",
+    });
+    const a = document.createElement("a");
+    const downloadUrl = window.URL.createObjectURL(blob);
+    a.style.display = "none";
+    a.href = downloadUrl;
+    a.download = `${title}.pdf`;
+    document.body.append(a);
+    a.click();
+    a.remove();
+    window.URL.revokeObjectURL(downloadUrl);
   };
 
   return (
@@ -36,14 +62,27 @@ const Home: NextPage = () => {
               onClick={() => {
                 handleGenerate();
               }}
+              isDisabled={!title || !vocab}
             >
               Generate
             </Button>
           </div>
           <div className="w-[0px] border-slate-200/20 rounded-full border-[1px] border-solid"></div>
           <div className="flex-1 flex flex-col justify-evenly">
-            <article className="flex flex-col gap-4 items-start">
-              <h3 className="text-mdtext-white/90">
+            <article className="flex flex-col gap-2 items-start">
+              <h3 className="text-md text-white/90">Collection Title</h3>
+              <Input
+                value={title}
+                onChange={(e) => {
+                  setTitle(e.target.value);
+                }}
+                placeholder="e.g. German Unit 1"
+                variant="underline"
+                containerClassName="w-full"
+              />
+            </article>
+            <article className="flex flex-col gap-2 items-start">
+              <h3 className="text-md text-white/90">
                 Between Term and Definition
               </h3>
               <Input
@@ -52,10 +91,10 @@ const Home: NextPage = () => {
                   setTermSep(e.target.value);
                 }}
                 variant="underline"
-                className="max-w-[120px]"
+                containerClassName="max-w-[120px]"
               />
             </article>
-            <article className="flex flex-col gap-4 items-start">
+            <article className="flex flex-col gap-2 items-start">
               <h3 className="text-md text-white/90">
                 Between Rows (default to new line)
               </h3>
@@ -65,15 +104,11 @@ const Home: NextPage = () => {
                   setLineSep(e.target.value);
                 }}
                 variant="underline"
-                className="max-w-[120px]"
+                containerClassName="max-w-[120px]"
               />
             </article>
           </div>
         </div>
-      </section>
-      <section className="mt-24">
-        <h1 className="font-extrabold text-2xl text-center">Preview</h1>
-        <IFrame className="w-full" ref={iframeRef}></IFrame>
       </section>
     </div>
   );
