@@ -13,5 +13,14 @@ module.exports = {
       cursor: ["focus"],
     },
   },
+  theme: {
+    extend: {
+      animation: {
+        fall: "fall 400ms ease-out forwards",
+        "spin-pulse":
+          "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite, spin 1s linear infinite",
+      },
+    },
+  },
   plugins: [require("@tailwindcss/typography")],
 };
