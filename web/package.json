@@ -5,7 +5,8 @@
     "dev": "concurrently \"next dev\" \"redis-server\"",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "postinstall": "cd ./node_modules/puppeteer && yarn install"
   },
   "dependencies": {
     "dragontail-experimental": "^0.0.63",
